@@ -1,0 +1,35 @@
+---
+- title: Senha Incorreta
+  payload:
+    email: betao@yahoo.com
+    password: '123456'
+  code: 401
+  error: Unauthorized
+- title: Usuario nao Existe
+  payload:
+    email: 404@yahoo.com
+    password: '123456'
+  code: 401
+  error: Unauthorized
+- title: Email em Branco
+  payload:
+    email: ''
+    password: '123456'
+  code: 412
+  error: required email
+- title: Sem o campo Email
+  payload:
+    password: '123456'
+  code: 412
+  error: required email
+- title: Senha em Branco
+  payload:
+    email: betao@yahoo.com
+    password: ''
+  code: 412
+  error: required password
+- title: Sem o campo Senha
+  payload:
+    email: betao@yahoo.com
+  code: 412
+  error: required password
