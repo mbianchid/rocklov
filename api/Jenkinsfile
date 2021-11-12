@@ -24,7 +24,9 @@ pipeline {
             }
         }
         stage('Prod') {
-            echo 'API pronta para produção :)'
+            steps {
+                echo 'API pronta para produção :)'
+            }
         }
     }
     post {
