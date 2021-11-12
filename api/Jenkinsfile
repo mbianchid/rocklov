@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'ruby'
-            args '-- network rocklov-network'
+            args '--network rocklov-network'
         }
     }
 
