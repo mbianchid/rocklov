@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'mdiasps/ruby-web-agent'
+            image 'mdiasps/ruby_27-web-agent'
             args '--network rocklov-network'
         }
     }
