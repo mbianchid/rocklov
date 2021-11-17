@@ -1,4 +1,4 @@
-# Classe as ações e elementos da página login.
+# Classe das ações e elementos da página login.
 
 class LoginPage
   include Capybara::DSL
