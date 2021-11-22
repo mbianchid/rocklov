@@ -5,11 +5,11 @@ Dado("Login com {string} e {string}") do |email, password|
   @login_page.open
   @login_page.with(email, password)
 
-  # Checkpoint para garantir que estamos no Dashboard
+  # Confirmação de Dashboard
   expect(@dash_page.on_dash?).to be true
 end
 
-# Clicar no botão para a criação de um novo anúncio
+# Criar novo anúncio
 Dado("que acesso o formulário de cadastro de anuncios") do
   @dash_page.goto_equipo_form
 end
@@ -21,12 +21,12 @@ Dado("que eu tenho o seguinte equipamento:") do |table|
   MongoDB.new.remove_equipo(@anuncio[:nome], @email)
 end
 
-#Preencher o formulário e submeter com base na massa de teste
+#Preencher e submeter formulário com base na massa de teste
 Quando("submeto o cadastro desse item") do
   @equipos_page.create(@anuncio)
 end
 
-# Validação do anúnico com base na massa de teste.
+# Validação anúnico com base na massa de teste.
 Então("devo ver esse item no meu Dashboard") do
   expect(@dash_page.equipo_list).to have_content @anuncio[:nome]
   expect(@dash_page.equipo_list).to have_content "R$#{@anuncio[:preco]}/dia"
